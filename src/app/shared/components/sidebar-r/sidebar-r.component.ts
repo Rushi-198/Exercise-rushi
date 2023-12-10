@@ -25,11 +25,14 @@ export class SidebarRComponent implements OnInit, OnChanges {
 
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.remindersArray = this.userObj.reminders
-    // console.log(this.userObj.courses);
 
-    this.coursesArray = this.userObj.courses
+    console.log();
+      if(this.userObj){
 
+        this.remindersArray = this.userObj.reminders
+        this.coursesArray = this.userObj.courses
+
+        
     let arr = []
     for(let key in this.userObj.courses){
       let obj = {
@@ -42,6 +45,10 @@ export class SidebarRComponent implements OnInit, OnChanges {
     }
 
     this.coursesArray = arr
+    
+      }
+    // console.log(this.userObj.courses);
+
     
   }
 
